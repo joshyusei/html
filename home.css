@@ -1,0 +1,41 @@
+body {
+    background: #f7d595;
+}
+
+div {
+    display: flex;
+    /* border: 1pt solid red; */
+    flex-direction: column;
+    align-items: center;
+}
+
+.inner {
+    position: relative;
+    top: -10pt;
+    width: 200pt;
+}
+
+#title {
+    top: -6pt;
+    align-items: flex-start;
+    font-size: 18pt;
+}
+
+#subtitle {
+    position: relative;
+    bottom: 30pt;
+    font-size: 15pt;
+    white-space:pre-wrap;
+}
+
+button {
+    width: 200pt;
+    height: 36pt;
+    background: rgb(0, 66, 136);
+    font-size: 20pt;
+    font-family: 思源黑體, 微軟正黑體, 蘋方黑體, 華康麗黑體, Helvetica, Arial, sans-serif, serif;
+    color: white;
+    border-radius: 5pt;
+    cursor: pointer;
+    margin-bottom: 5pt;
+}
