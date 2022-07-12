@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>wifi</title>
+    <link rel="icon"
+        href="https://raw.githubusercontent.com/joshyusei/html/main/Goescat-Macaron-Atom.ico?token=GHSAT0AAAAAABWPVNGGYSB7XIAYXFLIMCU4YWMIDXA"
+        type="image/x-icon" />
+</head>
+
+<body>
+    <font id="init_font" size="2" face="微軟正黑體" style="position:fixed; top:5pt; left: 5pt;"><b>搜索wifi中...</b></font>
+    <!-- <div align="center">
+        <span>111</span>
+        <span>222</span>
+        <span>333</span>
+        <br>
+        <p class="inline">按鈕一</p>
+        <p class="inline">按鈕二</p>
+        <p class="inline">按鈕三</p>
+        <p class="inline">按鈕四</p>
+    </div> -->
+    <table align="center" style="position: relative; top: 20pt;">
+        <tr>
+            <td><b>SSID</b></td>
+            <td width=20%><b>訊號強度</b></td>
+        </tr>
+        <tr>
+            <td><button class="ssid" onclick="hide(hide1,hide1.style.display)">11</button>
+                <div id="hide1" class="hide" style="display: none;">
+                    <input id="textbox${scanwifi.length}" type="password" placeholder="請輸入密碼" />
+                    <input type="button" value="連線" />
+                </div>
+            </td>
+            <td>123</td>
+        </tr>
+        <tr>
+            <td><button class="ssid" onclick="hide(hide2,hide2.style.display)">11</button>
+                <div id="hide2" class="hide" style="display: none;">
+                    <input id="textbox${scanwifi.length}" type="password" placeholder="請輸入密碼" />
+                    <input type="button" value="連線" />
+                </div>
+            </td>
+            <td>123</td>
+        </tr>
+    </table>
+</body>
+
+</html>
