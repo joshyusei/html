@@ -1,3 +1,4 @@
+var basehost='http://'+location.host
 var wifiinfo = {}
 var scanwifi = []
 info()
@@ -36,7 +37,7 @@ function info() {
                 `
         }
     }
-    xhttp.open("GET", "http://192.168.0.133/control?wifiinfo", true);
+    xhttp.open("GET", basehost+"/control?wifiinfo", true);
     xhttp.send();
 }
 function scan() {
@@ -79,7 +80,7 @@ function scan() {
             document.getElementById('init_font').innerHTML = '<b>搜索完成</b>'
         }
     };
-    xhttp.open("GET", "http://192.168.0.133/control?scanwifi", true);
+    xhttp.open("GET", basehost+"/control?scanwifi", true);
     xhttp.send();
 }
 
@@ -103,7 +104,7 @@ function link(id) {
     data.append('password', password);
     param = `ssid=${scanwifi[id - 1]['ssid']}&password=${password}`
     var xhttp = new XMLHttpRequest();
-    xhttp.open("POST", `http://192.168.0.133:82/resetwifi`, true);
+    xhttp.open("POST", basehost+`:82/resetwifi`, true);
     xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
