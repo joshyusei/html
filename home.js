@@ -1,3 +1,4 @@
+var basehost='http://'+location.host
 function restart() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
