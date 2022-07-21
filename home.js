@@ -11,6 +11,6 @@ function restart() {
             }
         }
     }
-    xhttp.open("GET", "control?restart", true);
+    xhttp.open("GET", '/restart', true);
     xhttp.send();
 }
