@@ -37,7 +37,7 @@ function info() {
                 `
         }
     }
-    xhttp.open("GET", basehost+"/control?wifiinfo", true);
+    xhttp.open("GET", basehost+`/wifiinfo`, true);
     xhttp.send();
 }
 function scan() {
@@ -80,7 +80,7 @@ function scan() {
             document.getElementById('init_font').innerHTML = '<b>搜索完成</b>'
         }
     };
-    xhttp.open("GET", basehost+"/control?scanwifi", true);
+    xhttp.open("GET", basehost+`/scanwifi`, true);
     xhttp.send();
 }
 
@@ -104,7 +104,7 @@ function link(id) {
     data.append('password', password);
     param = `ssid=${scanwifi[id - 1]['ssid']}&password=${password}`
     var xhttp = new XMLHttpRequest();
-    xhttp.open("POST", basehost+`:82/resetwifi`, true);
+    xhttp.open("POST", basehost+`/resetwifi`, true);
     xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
