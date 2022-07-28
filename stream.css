@@ -1,0 +1,326 @@
+* {
+  font-family: 'noto Sans TC', 'sans-serif';
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: #546377;
+}
+#joystick {
+  border: 1px solid #FF0000;
+}
+#stream-content {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 75%;
+  overflow: auto;
+  border:1pt solid rgb(255, 127, 214);
+}
+
+#stream-img {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto;
+  background-color: hsl(0, 0%, 25%);
+}
+
+.sideMenu {
+  z-index: 10;
+  width: 300px;
+  height: 100%;
+  background-color: #ffc584;
+  border-right: 3px solid #d1d1d1;
+  display: flex;
+  /* //讓 sideMenu 裡面的元素變成橫排 */
+  flex-direction: column;
+  /* //讓 flex 的方向變成直排 */
+  /* padding: 0px 3px 0px 6px; */
+  /* //因為有 boxsizing 的關係，所以不會有 Y 軸 bar */
+  box-shadow: 5px 0 5px hsla(240, 40%, 15%, .6);
+  /* //H 為 hue(色相)、S 為 saturation(飽合度)、L 為 lightness(亮度)，a透明度 */
+  position: relative;
+  /* // label 定位在這個上 */
+  transform: translateX(-100%);
+  /* // 將 sideMenu 左橫移 100%，使他到螢幕外 */
+  transition: 0.5s;
+  /* // 側邊選單收合的時間差  */
+}
+
+#menu_content {
+  overflow-y: auto;
+  padding: 0px 3px 0px 6px;
+}
+
+#menu_title {
+  background: linear-gradient(to bottom, rgb(255 253 119), #ffc584);
+}
+
+#menu_title div {
+  width: 100%;
+}
+
+#menu_title h1 {
+  margin: 0;
+  padding-bottom: 10;
+  /* position: relative;
+  top: -20; */
+}
+
+#menu-change {
+  position: absolute;
+  right: 3;
+  bottom: 0;
+  color: #00a1d0;
+  cursor: pointer;
+  box-shadow: 0 1px;
+}
+
+/* #menu_content::before{
+  content: '';
+  display: inline-block;
+  height: 50pt;
+} */
+
+#menu_icon {
+  position: absolute;
+  width: 20px;
+  height: 80px;
+  background-color: #d1d1d1;
+  color: #686666;
+  /* // 絕對定位在 sideMenu 上 */
+  right: -20px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  line-height: 80px;
+  text-align: center;
+  border-radius: 0 5px 5px 0;
+  /* // 標籤加圓角 */
+  box-shadow: 5px 0 5px hsla(240, 40%, 15%, .6);
+}
+
+#sideMenu--active:checked+.sideMenu {
+  transform: translateX(0);
+  /* 當我點擊 sideMenu 時，checkbox 會啟動 id，讓側邊選單跑出來 */
+}
+
+#sideMenu--active:checked+.sideMenu>#menu_icon {
+  transform: scaleX(-1);
+  /* 使 label 裡的圖案橫向反轉 */
+}
+
+.fa-angle-right:before {
+  content: '\2771';
+}
+
+#sideMenu--active {
+  position: absolute;
+  opacity: 0;
+  /* // 設定 checkbox 絕對定位，透明度是 0，就會隱藏  */
+  z-index: -1;
+  /* // 為了保險不要讓該功能還選得到，可將其排序往後跳 */
+}
+
+/* width */
+#menu_content::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* ------------------------------------------------------------------------------- */
+.input-group {
+  display: flex;
+  flex-wrap: nowrap;
+  line-height: 22px;
+  margin: 15px 0
+}
+
+.input-group>label {
+  text-align: justify;
+  display: inline-block;
+  padding-right: 10px;
+  min-width: 20%;
+  font-weight: bold;
+}
+
+.input-group>label:after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+}
+
+.input-group input,
+.input-group select {
+  flex-grow: 1
+}
+
+.range-max,
+.range-min {
+  display: inline-block;
+  padding: 0 5px
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 22px;
+  background: #ffc584;
+  cursor: pointer;
+  margin: 0
+}
+
+input[type=range]:focus {
+  outline: 0
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  background: #EFEFEF;
+  border-radius: 0;
+  border: 0 solid #EFEFEF
+}
+
+input[type=range]::-webkit-slider-thumb {
+  border: 1px solid rgba(0, 0, 30, 0);
+  height: 17px;
+  width: 17px;
+  border-radius: 50px;
+  background: #27baf1;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -7.5px
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #EFEFEF
+}
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  background: #EFEFEF;
+  border-radius: 0;
+  border: 0 solid #EFEFEF
+}
+
+input[type=range]::-moz-range-thumb {
+  border: 1px solid rgba(0, 0, 30, 0);
+  height: 22px;
+  width: 22px;
+  border-radius: 50px;
+  background: #ff3034;
+  cursor: pointer
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  background: 0 0;
+  border-color: transparent;
+  color: transparent
+}
+
+input[type=range]::-ms-fill-lower {
+  background: #EFEFEF;
+  border: 0 solid #EFEFEF;
+  border-radius: 0
+}
+
+input[type=range]::-ms-fill-upper {
+  background: #EFEFEF;
+  border: 0 solid #EFEFEF;
+  border-radius: 0
+}
+
+input[type=range]::-ms-thumb {
+  border: 1px solid rgba(0, 0, 30, 0);
+  height: 22px;
+  width: 22px;
+  border-radius: 50px;
+  background: #ff3034;
+  cursor: pointer;
+  height: 2px
+}
+
+input[type=range]:focus::-ms-fill-lower {
+  background: #EFEFEF
+}
+
+input[type=range]:focus::-ms-fill-upper {
+  background: #363636
+}
+
+.switch {
+  display: block;
+  position: relative;
+  line-height: 22px;
+  font-size: 16px;
+  height: 22px
+}
+
+.switch input {
+  outline: 0;
+  opacity: 0;
+  width: 0;
+  height: 0
+}
+
+.slider {
+  width: 50px;
+  height: 22px;
+  border-radius: 22px;
+  cursor: pointer;
+  background-color: grey
+}
+
+.slider,
+.slider:before {
+  display: inline-block;
+  transition: .4s
+}
+
+.slider:before {
+  position: relative;
+  content: "";
+  border-radius: 50%;
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  top: 3px;
+  background-color: #fff
+}
+
+input:checked+.slider {
+  background-color: #27baf1
+}
+
+input:checked+.slider:before {
+  -webkit-transform: translateX(26px);
+  transform: translateX(26px)
+}
