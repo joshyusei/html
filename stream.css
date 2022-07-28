@@ -55,6 +55,7 @@ body {
 }
 
 #menu_content {
+  height: 100%;
   overflow-y: auto;
   padding: 0px 3px 0px 6px;
 }
@@ -69,14 +70,14 @@ body {
 
 #menu_title h1 {
   margin: 0;
-  padding-bottom: 10;
+  padding-bottom: 10px;
   /* position: relative;
   top: -20; */
 }
 
 #menu-change {
   position: absolute;
-  right: 3;
+  right: 3pt;
   bottom: 0;
   color: #00a1d0;
   cursor: pointer;
@@ -151,6 +152,7 @@ body {
 
 /* ------------------------------------------------------------------------------- */
 .input-group {
+  height: 15pt;
   display: flex;
   flex-wrap: nowrap;
   line-height: 22px;
@@ -312,7 +314,7 @@ input[type=range]:focus::-ms-fill-upper {
   height: 16px;
   width: 16px;
   left: 4px;
-  top: 3px;
+  top: 2px;
   background-color: #fff
 }
 
