@@ -1,0 +1,117 @@
+<head id="head">
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>stream</title>
+</head>
+<link rel="stylesheet" type="text/css" href="stream.css">
+<script src="joystick.js"></script>
+
+<body>
+    <div id="stream-content" onclick="pageclick()">
+        <img id="stream-img" src=''>
+    </div>
+    <div id="joystick-content"
+        style=" position: absolute; bottom: 0; width: 100%; height: 25%; border:1pt solid aquamarine;">
+        <div id="joy1Div" align="center" style="height: 100%; "></div>
+        <!-- <div style='position: absolute; right: 0; '>
+            Posizione X:<input id="joy1PosizioneX" type="text" /><br />
+            Posizione Y:<input id="joy1PosizioneY" type="text" /><br />
+            Direzione:<input id="joy1Direzione" type="text" /><br />
+            X :<input id="joy1X" type="text" /></br>
+            Y :<input id="joy1Y" type="text" />
+        </div> -->
+    </div>
+    <input type="checkbox" name="" id="sideMenu--active">
+    <!-- 使用 checkbox 來做開關 -->
+    <div class="sideMenu">
+        <div id="menu_title">
+            <div><a href="http://josh.local" size="2" face="微軟正黑體"
+                    style="position: relative;top:1pt; left: 1pt;">◀回首頁</a></div>
+            <div style="position: relative;">
+                <h1 id="title" align="center">影像設定</h1>
+                <a id="menu-change"><b>⇋切換</b></a>
+            </div>
+        </div>
+        <div id="menu_content">
+            <div id="stream-setting">
+                <div class="input-group" id="stream-group">
+                    <label for="stream">影像</label>
+                    <div class="switch">
+                        <input id="stream" type="checkbox">
+                        <label class="slider" for="stream"></label>
+                    </div>
+                </div>
+                <div class="input-group" id="framesize-group">
+                    <label for="framesize">解析度</label>
+                    <select id="framesize" class="default-action">
+                        <option value="10">UXGA(1600x1200)</option>
+                        <option value="9">SXGA(1280x1024)</option>
+                        <option value="8">XGA(1024x768)</option>
+                        <option value="7">SVGA(800x600)</option>
+                        <option value="6">VGA(640x480)</option>
+                        <option value="5">CIF(400x296)</option>
+                        <option value="4" selected="selected">QVGA(320x240)</option>
+                        <option value="3">HQVGA(240x176)</option>
+                        <option value="0">QQVGA(160x120)</option>
+                    </select>
+                </div>
+                <div class="input-group" id="quality-group">
+                    <label for="quality">畫質</label>
+                    <div class="range-min">10</div>
+                    <input type="range" id="quality" min="10" max="63" value="10" class="default-action">
+                    <div class="range-max">63</div>
+                </div>
+                <div class="input-group" id="brightness-group">
+                    <label for="brightness">亮度</label>
+                    <div class="range-min">-2</div>
+                    <input type="range" id="brightness" min="-2" max="2" value="0" class="default-action">
+                    <div class="range-max">2</div>
+                </div>
+                <div class="input-group" id="contrast-group">
+                    <label for="contrast">對比</label>
+                    <div class="range-min">-2</div>
+                    <input type="range" id="contrast" min="-2" max="2" value="0" class="default-action">
+                    <div class="range-max">2</div>
+                </div>
+                <div class="input-group" id="hmirror-group">
+                    <label for="hmirror">水平翻轉</label>
+                    <div class="switch">
+                        <input id="hmirror" type="checkbox" class="default-action" checked="checked">
+                        <label class="slider" for="hmirror"></label>
+                    </div>
+                </div>
+                <div class="input-group" id="vflip-group">
+                    <label for="vflip">垂直翻轉</label>
+                    <div class="switch">
+                        <input id="vflip" type="checkbox" class="default-action" checked="checked">
+                        <label class="slider" for="vflip"></label>
+                    </div>
+                </div>
+            </div>
+            <div id="car-setting" style="display:none ;">
+                <div class="input-group" id="flash-group">
+                    <label for="flash">亮燈</label>
+                    <div class="range-min">0</div>
+                    <input type="range" id="flash" min="0" max="255" value="0" class="default-action">
+                    <div class="range-max">255</div>
+                </div>
+                <div class="input-group" id="speedR-group">
+                    <label for="speedR">右速</label>
+                    <div class="range-min">0</div>
+                    <input type="range" id="speedR" min="0" max="255" value="170" class="default-action">
+                    <div class="range-max">255</div>
+                </div>
+                <div class="input-group" id="speedL-group">
+                    <label for="speedL">左速</label>
+                    <div class="range-min">0</div>
+                    <input type="range" id="speedL" min="0" max="255" value="170" class="default-action">
+                    <div class="range-max">255</div>
+                </div>
+            </div>
+        </div>
+        <label id="menu_icon" for="sideMenu--active">
+            <i class="fas fa-angle-right"></i>
+        </label>
+        <!-- label 寫在 nav 下方是為了比較好看到 -->
+    </div>
+</body>
+<script type="text/javascript" src="stream.js"></script>
